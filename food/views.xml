@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <record model="ir.actions.act_window" id="camareros_list_action">
+        <field name="name">camareros</field>
+        <field name="res_model">food.camareros</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de camareros">
+                <field name="name" />
+                <field name="mesas_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+     <record model="ir.actions.act_window" id="mesas_list_action">
+        <field name="name">mesas</field>
+        <field name="res_model">food.mesas</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de mesas">
+                <field name="name" />
+                <field name="camarero_id"/>
+            </tree>
+        </field>
+    </record>
+   
+    
+
+    <menuitem name="Comidas" id="food_menu_root"/>
+    
+    <menuitem name="Camareros" id="food_menu_camareros" parent="food_menu_root"/>
+    <menuitem name="Mesas" id="food_menu_mesas" parent="food_menu_root"/>
+   
+    
+    
+    <menuitem name="Listado de camareros" id="food_list_camareros" parent="food_menu_camareros" action="camareros_list_action"/>
+    
+    <menuitem name="Listado de mesas" id="food_list_mesas" parent="food_menu_mesas" action="mesas_list_action"/>
+   
+  </data>
+</openerp>
