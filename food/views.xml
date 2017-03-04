@@ -62,11 +62,11 @@
     <menuitem name="Platos" id="food_menu_platos" parent="food_menu_root"/>
     
     
-    <menuitem name="Listado de camareros" id="food_list_camareros" parent="food_menu_camareros" action="camareros_list_action"/>
+    <menuitem name="Listado de camareros" id="food_list_camareros" parent="food_menu_root" action="camareros_list_action"/>
     
-    <menuitem name="Listado de mesas" id="food_list_mesas" parent="food_menu_mesas" action="mesas_list_action"/>
+    <menuitem name="Listado de mesas" id="food_list_mesas" parent="food_menu_root" action="mesas_list_action"/>
     
-    <menuitem name="Listado de platos" id="food_list_platos" parent="food_menu_plato" action="plato_list_action"/>
+    <menuitem name="Listado de platos" id="food_list_platos" parent="food_menu_root" action="plato_list_action"/>
     
     <!--<menuitem name="Listado de decoracion" id="food_list_decoracion" parent="food_menu_decoracion" action="decoracion_list_action"/>-->
     
