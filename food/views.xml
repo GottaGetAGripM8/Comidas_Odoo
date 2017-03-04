@@ -22,25 +22,53 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="arch" type="xml">
-            <tree string="Listado de mesas">
-                <field name="name" />
-                <field name="camarero_id"/>
+            <tree string="Listado de mesas">s
+                <field name="camareros_id"/>
             </tree>
         </field>
     </record>
    
-    
+    <record model="ir.actions.act_window" id="plato_list_action">
+        <field name="name">platos</field>
+        <field name="res_model">food.platos</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de platos">
+                <field name="name" />
+                
+            </tree>
+        </field>
+    </record>
+
+    <!--<record model="ir.actions.act_window" id="decoracion_list_action">
+        <field name="name">decoracion</field>
+        <field name="res_model">food.decoracion</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de decoracion">
+                <field name="name" />
+                
+            </tree>
+        </field>
+    </record>-->
 
     <menuitem name="Comidas" id="food_menu_root"/>
     
     <menuitem name="Camareros" id="food_menu_camareros" parent="food_menu_root"/>
     <menuitem name="Mesas" id="food_menu_mesas" parent="food_menu_root"/>
-   
+    <!--<menuitem name="Decoracion" id="food_menu_decoracion" parent="food_menu_root"/>-->
+    <menuitem name="Platos" id="food_menu_platos" parent="food_menu_root"/>
     
     
     <menuitem name="Listado de camareros" id="food_list_camareros" parent="food_menu_camareros" action="camareros_list_action"/>
     
     <menuitem name="Listado de mesas" id="food_list_mesas" parent="food_menu_mesas" action="mesas_list_action"/>
-   
+    
+    <menuitem name="Listado de platos" id="food_list_platos" parent="food_menu_plato" action="plato_list_action"/>
+    
+    <!--<menuitem name="Listado de decoracion" id="food_list_decoracion" parent="food_menu_decoracion" action="decoracion_list_action"/>-->
+    
   </data>
 </openerp>
