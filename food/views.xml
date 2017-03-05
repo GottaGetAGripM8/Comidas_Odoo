@@ -11,6 +11,8 @@
             <tree string="Listado de camareros">
                 <field name="name" />
                 <field name="mesas_id"/>
+                <field name="sexo"/>
+                <field name="edad"/>
             </tree>
         </field>
     </record>
@@ -36,12 +38,12 @@
         <field name="arch" type="xml">
             <tree string="Listado de platos">
                 <field name="name" />
-                
+                <field name="tipo" />
             </tree>
         </field>
     </record>
 
-    <!--<record model="ir.actions.act_window" id="decoracion_list_action">
+    <record model="ir.actions.act_window" id="decoracion_list_action">
         <field name="name">decoracion</field>
         <field name="res_model">food.decoracion</field>
         <field name="view_type">form</field>
@@ -49,16 +51,16 @@
         <field name="arch" type="xml">
             <tree string="Listado de decoracion">
                 <field name="name" />
-                
+                <field name="tipo" />
             </tree>
         </field>
-    </record>-->
+    </record>
 
     <menuitem name="Comidas" id="food_menu_root"/>
     
     <menuitem name="Camareros" id="food_menu_camareros" parent="food_menu_root"/>
     <menuitem name="Mesas" id="food_menu_mesas" parent="food_menu_root"/>
-    <!--<menuitem name="Decoracion" id="food_menu_decoracion" parent="food_menu_root"/>-->
+    <menuitem name="Decoracion" id="food_menu_decoracion" parent="food_menu_root"/>
     <menuitem name="Platos" id="food_menu_platos" parent="food_menu_root"/>
     
     
@@ -68,7 +70,7 @@
     
     <menuitem name="Listado de platos" id="food_list_platos" parent="food_menu_root" action="plato_list_action"/>
     
-    <!--<menuitem name="Listado de decoracion" id="food_list_decoracion" parent="food_menu_decoracion" action="decoracion_list_action"/>-->
+    <menuitem name="Listado de decoracion" id="food_list_decoracion" parent="food_menu_decoracion" action="decoracion_list_action"/>
     
   </data>
 </openerp>
