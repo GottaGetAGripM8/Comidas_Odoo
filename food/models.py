@@ -16,8 +16,7 @@ class Decoracion(models.Model):
 	name = fields.Char(string="Nombre de la decoracion", required=True)
 	tipo = fields.Selection([('invernal','Festival de Invernal'), ('halloween','Festival de Halloween'), ('primavera','Festival de la Primavera')], 'decoracion_festival')
 
-	decoracion_id = fields.One2many('food.decoracion', 'mesas_id', string="Decoracion")
-
+	mesas_id = fields.One2many('food.mesas', 'decoracion_id', string="Decoracion")
 
 class Camareros(models.Model): 
 	_name = 'food.camareros'
@@ -26,7 +25,7 @@ class Camareros(models.Model):
 	sexo = fields.Selection([('mujer','Mujer'), ('hombre','Hombre')], 'sexo')
 	edad = fields.Integer(string="Edad ", required=True)
 
-	mesas_id = fields.One2many('food.camareros', 'mesas_id', string="Mesa")
+	mesas_id = fields.One2many('food.mesas', 'camareros_id', string="Mesa")
 	platos_id = fields.Many2many(string="Platos", comodel_name='food.platos', relation='rel_plato_camareros', column1='camareros', column2='plato')
 	
 	
@@ -35,8 +34,8 @@ class Mesas(models.Model):
 
 	name = fields.Char(string="Nombre de la mesa", required=True)
 
-	camareros_id = fields.Many2one('food.mesas', string="Camareros")
-	decoracion_id = fields.Many2one('food.mesas', string="Decoracion")
+	camareros_id = fields.Many2one('food.camareros', string="Camareros")
+	decoracion_id = fields.Many2one('food.decoracion', string="Decoracion")
 
 
 
